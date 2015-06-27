@@ -11,6 +11,7 @@ byte Ethernet::buffer[500];
 BufferFiller bfill;
 
 void setup () {
+  Serial.begin(57600);
   if (ether.begin(sizeof Ethernet::buffer, mymac) == 0)
     Serial.println(F("Failed to access Ethernet controller"));
   ether.staticSetup(myip);
